@@ -24,7 +24,7 @@ public class MyAppPolicyConfiguration : AbstractPolicyConfiguration
 }
 ```
 
-** Init policy context**
+**Init policy context**
 ```csharp
 IPolicyContext _policyContext;
 
