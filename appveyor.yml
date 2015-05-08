@@ -1,0 +1,15 @@
+configuration: Release
+branches:
+  only:
+    - master
+
+before_build:
+  - nuget restore FluentBootstrapPolicy.sln
+
+build:
+  project: FluentBootstrapPolicy.sln       
+  verbosity: minimal
+
+test:
+  assemblies:
+    - '**\*.Tests.dll'
