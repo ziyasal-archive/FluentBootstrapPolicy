@@ -78,7 +78,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FluentPolicy\FluentBootstrapPolicy.csproj">
+    <ProjectReference Include="..\FluentBootstrapPolicy\FluentBootstrapPolicy.csproj">
       <Project>{5283448B-9EAE-4D10-BF90-D7B40BDB01A4}</Project>
       <Name>FluentBootstrapPolicy</Name>
     </ProjectReference>

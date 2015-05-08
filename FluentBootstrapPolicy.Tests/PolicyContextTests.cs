@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 using Common.Testing.NUnit;
 using NUnit.Framework;
 
@@ -25,7 +26,7 @@ namespace FluentBootstrapPolicy.Tests
         [Test]
         public void Start_Test()
         {
-            _policyContext.Bootstrap();
+            Assert.Throws<Exception>(() => _policyContext.Bootstrap());
         }
     }
 }
