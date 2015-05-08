@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>FluentBootstrapPolicy</id>
+    <version>1.0.0</version>
+    <title>FluentBootstrapPolicy</title>
+    <authors>Ziya SARIKAYA, Safak ULUSOY</authors>
+    <owners>ziyasal polarbit</owners>
+    <licenseUrl>https://github.com/ziyasal/FluentBootstrapPolicy/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ziyasal/FluentBootstrapPolicy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Fluent application bootstrap policy
+    </description>
+    <summary>Fluent application bootstrap policy</summary>
+    <tags>fluent policy bootstrap</tags>
+    <copyright />
+    <dependencies>
+      <dependency id="Autofac" version="3.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\FluentBootstrapPolicy.dll" target="lib\net451\FluentBootstrapPolicy.dll" />
+  </files>
+</package>
