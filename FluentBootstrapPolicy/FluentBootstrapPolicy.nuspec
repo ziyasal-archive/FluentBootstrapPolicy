@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FluentBootstrapPolicy</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>FluentBootstrapPolicy</title>
     <authors>Ziya SARIKAYA, Safak ULUSOY</authors>
-    <owners>ziyasal polarbit</owners>
+    <owners>ziyasal,polarbit</owners>
     <licenseUrl>https://github.com/ziyasal/FluentBootstrapPolicy/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/ziyasal/FluentBootstrapPolicy</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
