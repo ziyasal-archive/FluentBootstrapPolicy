@@ -10,7 +10,6 @@ namespace FluentBootstrapPolicy.Tests
         {
             builder.RegisterType<StorageClient>().As<IStorageClient>().SingleInstance();
             builder.RegisterType<CurrencyProvider>().As<ICurrencyProvider>().SingleInstance();
-            //builder.RegisterType<AutofacDependeyResolverAdapter>().As<IDependeyResolverAdapter>().SingleInstance();
 
             builder
                 .RegisterAssemblyTypes(Assembly.GetExecutingAssembly())

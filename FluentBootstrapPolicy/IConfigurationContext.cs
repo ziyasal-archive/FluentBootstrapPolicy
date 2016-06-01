@@ -2,10 +2,14 @@
 
 namespace FluentBootstrapPolicy
 {
-    public interface IConfigurationContext
+    public interface IConfigurationContext : IUseNlog
     {
-        void Use(IDependeyResolverAdapter dependeyResolverAdapter);
-        void UseNlog();
+        IUseNlog Use(IServiceLocator serviceLocator);
         void Scan(Assembly assembly);
+    }
+
+    public interface IUseNlog
+    {
+        void UseNlog();
     }
 }

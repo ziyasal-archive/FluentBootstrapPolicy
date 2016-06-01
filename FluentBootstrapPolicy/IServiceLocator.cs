@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FluentBootstrapPolicy
 {
-    public interface IDependeyResolverAdapter
+    public interface IServiceLocator
     {
         object GetService(Type serviceType);
         IEnumerable<object> GetServices(Type serviceType);

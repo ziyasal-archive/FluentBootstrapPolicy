@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractPolicyConfiguration.cs" />
-    <Compile Include="AutofacDependeyResolverAdapter.cs" />
+    <Compile Include="AutofacServiceLocator.cs" />
     <Compile Include="DefaultAssemblyScanner.cs" />
     <Compile Include="IAssemblyScanner.cs" />
     <Compile Include="IConfigurationContext.cs" />
-    <Compile Include="IDependeyResolverAdapter.cs" />
+    <Compile Include="IServiceLocator.cs" />
     <Compile Include="IPolicyContext.cs" />
     <Compile Include="PolicyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

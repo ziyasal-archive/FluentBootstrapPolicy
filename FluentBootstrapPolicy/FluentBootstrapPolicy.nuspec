@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FluentBootstrapPolicy</id>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <title>FluentBootstrapPolicy</title>
     <authors>Ziya SARIKAYA, Safak ULUSOY</authors>
     <owners>ziyasal,polarbit</owners>

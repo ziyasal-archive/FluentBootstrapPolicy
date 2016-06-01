@@ -8,9 +8,10 @@ namespace FluentBootstrapPolicy.Tests
     public class PolicyContextTests : TestBase
     {
         private IPolicyContext _policyContext;
+
         protected override void FinalizeSetUp()
         {
-            ContainerBuilder builder = new ContainerBuilder();
+            var builder = new ContainerBuilder();
 
             builder.RegisterModule<TestModule>();
 
@@ -18,15 +19,18 @@ namespace FluentBootstrapPolicy.Tests
             _policyContext = PolicyContext.Instance;
 
             _policyContext.Configure(x =>
-             {
-                 x.Use(new AutofacDependeyResolverAdapter(container));
-             });
+            {
+                x
+                    .Use(new AutofacServiceLocator(container))
+                    .UseNlog();
+
+            });
         }
 
         [Test]
         public void Start_Test()
         {
-            Assert.Throws<Exception>(() => _policyContext.Bootstrap());
+            Assert.Throws<Exception>(() => _policyContext.Execute());
         }
     }
 }

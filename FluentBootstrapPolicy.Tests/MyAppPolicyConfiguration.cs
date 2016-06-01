@@ -4,7 +4,7 @@ namespace FluentBootstrapPolicy.Tests
 {
     public class MyAppPolicyConfiguration : AbstractPolicyConfiguration
     {
-        public MyAppPolicyConfiguration(IDependeyResolverAdapter dependencyResolver)
+        public MyAppPolicyConfiguration(IServiceLocator dependencyResolver)
             : base(dependencyResolver)
         {
             Check<ICurrencyProvider>(provider =>
