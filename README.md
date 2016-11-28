@@ -50,5 +50,3 @@ _policyContext.Configure(x =>
 ```csharp
   _policyContext.Bootstrap();
 ```
-
-#MORE COMING SOON :)
