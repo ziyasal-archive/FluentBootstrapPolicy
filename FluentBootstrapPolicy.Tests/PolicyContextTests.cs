@@ -11,18 +11,18 @@ namespace FluentBootstrapPolicy.Tests
 
         protected override void FinalizeSetUp()
         {
-            var builder = new ContainerBuilder();
 
-            builder.RegisterModule<TestModule>();
-
-            var container = builder.Build();
             _policyContext = PolicyContext.Instance;
 
             _policyContext.Configure(x =>
             {
-                x
-                    .Use(new AutofacServiceLocator(container))
-                    .UseNlog();
+                var builder = new ContainerBuilder();
+
+                builder.RegisterModule<TestModule>();
+
+                var container = builder.Build();
+                x.Use(new AutofacServiceLocator(container))
+                 .UseNlog();
 
             });
         }
