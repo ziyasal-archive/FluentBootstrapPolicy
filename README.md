@@ -1,5 +1,6 @@
 # FluentBootstrapPolicy
-Fluent application bootstrap policy
+
+Execute pre-checks before running your application!
 
 [![Build status](https://ci.appveyor.com/api/projects/status/5erlwhdxa78grl83?svg=true)](https://ci.appveyor.com/project/ziyasal/fluentbootstrappolicy)
 
@@ -7,8 +8,8 @@ Fluent application bootstrap policy
 ```csharp
 public class MyAppPolicyConfiguration : AbstractPolicyConfiguration
 {
-    public MyAppPolicyConfiguration(IDependeyResolverAdapter dependencyResolver)
-        : base(dependencyResolver)
+    public MyAppPolicyConfiguration(IServiceLocator serviceLocator)
+        : base(serviceLocator)
     {
         Check<ICurrencyProvider>(provider =>
         {
@@ -38,15 +39,15 @@ builder
        .As<AbstractPolicyConfiguration>();
                 
 var container = builder.Build();
-_policyContext = PolicyContext.Instance;
+_policies = PolicyContext.Instance;
 
-_policyContext.Configure(x =>
+_policies.Configure(x =>
 {
-    x.Use(new AutofacDependeyResolverAdapter(container));
+    x.Use(new ServiceLocator(container));
 });
 ```
 
 **Run policies**
 ```csharp
-  _policyContext.Bootstrap();
+  _policies.Execute();
 ```
