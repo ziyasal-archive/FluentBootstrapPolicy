@@ -43,7 +43,7 @@ _policies = PolicyContext.Instance;
 
 _policies.Configure(x =>
 {
-    x.Use(new ServiceLocator(container));
+    x.Use(new AutofacServiceLocator(container));
 });
 ```
 
