@@ -4,15 +4,15 @@ using System.Reflection;
 
 namespace FluentBootstrapPolicy
 {
-    public class PolicyContext : IPolicyContext, IConfigurationContext
+    public class FluentBootstrap : IFluentBootstrap, IConfigurationContext
     {
-        private static readonly Lazy<PolicyContext> LazyInstance =
-            new Lazy<PolicyContext>(() => new PolicyContext(), true);
+        private static readonly Lazy<FluentBootstrap> LazyInstance =
+            new Lazy<FluentBootstrap>(() => new FluentBootstrap(), true);
 
         private IServiceLocator _dependeyResolver;
 
 
-        public static IPolicyContext Instance => LazyInstance.Value;
+        public static IFluentBootstrap Instance => LazyInstance.Value;
 
         public IUseNlog Use(IServiceLocator serviceLocator)
         {

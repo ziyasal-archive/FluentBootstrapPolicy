@@ -4,7 +4,8 @@ Execute pre-checks before running your application!
 
 [![Build status](https://ci.appveyor.com/api/projects/status/5erlwhdxa78grl83?svg=true)](https://ci.appveyor.com/project/ziyasal/fluentbootstrappolicy)
 
-**Define policy**
+## Define policies
+
 ```csharp
 public class MyAppPolicyConfiguration : AbstractPolicyConfiguration
 {
@@ -25,7 +26,8 @@ public class MyAppPolicyConfiguration : AbstractPolicyConfiguration
 }
 ```
 
-**Init policy context**
+## Init policy context
+
 ```csharp
 IPolicyContext _policyContext;
 
@@ -37,17 +39,20 @@ builder
        .RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
        .AssignableTo<AbstractPolicyConfiguration>()
        .As<AbstractPolicyConfiguration>();
-                
-var container = builder.Build();
-_policies = PolicyContext.Instance;
 
-_policies.Configure(x =>
+var container = builder.Build();
+_policies = FluentBootstrap.Instance;
+
+_policies.Configure(ctx =>
 {
-    x.Use(new AutofacServiceLocator(container));
+    ctx.Use(new AutofacServiceLocator(container));
 });
 ```
 
-**Run policies**
+## Execute policies
+
 ```csharp
   _policies.Execute();
 ```
+
+@ziλasal

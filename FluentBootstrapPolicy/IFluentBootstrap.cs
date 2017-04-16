@@ -2,7 +2,7 @@
 
 namespace FluentBootstrapPolicy
 {
-    public interface IPolicyContext
+    public interface IFluentBootstrap
     {
         void Configure(Action<IConfigurationContext> configurator);
         void Execute();

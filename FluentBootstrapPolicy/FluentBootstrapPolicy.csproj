@@ -56,8 +56,8 @@
     <Compile Include="IAssemblyScanner.cs" />
     <Compile Include="IConfigurationContext.cs" />
     <Compile Include="IServiceLocator.cs" />
-    <Compile Include="IPolicyContext.cs" />
-    <Compile Include="PolicyContext.cs" />
+    <Compile Include="IFluentBootstrap.cs" />
+    <Compile Include="FluentBootstrap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

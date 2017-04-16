@@ -5,24 +5,25 @@ using NUnit.Framework;
 
 namespace FluentBootstrapPolicy.Tests
 {
-    public class PolicyContextTests : TestBase
+    public class FluentBootstrapTests : TestBase
     {
-        private IPolicyContext _policyContext;
+        private IFluentBootstrap _fluentBootstrap;
 
         protected override void FinalizeSetUp()
         {
 
-            _policyContext = PolicyContext.Instance;
+            _fluentBootstrap = FluentBootstrap.Instance;
 
-            _policyContext.Configure(x =>
+            _fluentBootstrap.Configure(context =>
             {
                 var builder = new ContainerBuilder();
 
                 builder.RegisterModule<TestModule>();
 
                 var container = builder.Build();
-                x.Use(new AutofacServiceLocator(container))
-                 .UseNlog();
+                context
+                    .Use(new AutofacServiceLocator(container))
+                    .UseNlog();
 
             });
         }
@@ -30,7 +31,7 @@ namespace FluentBootstrapPolicy.Tests
         [Test]
         public void Start_Test()
         {
-            Assert.Throws<Exception>(() => _policyContext.Execute());
+            Assert.Throws<Exception>(() => _fluentBootstrap.Execute());
         }
     }
 }
