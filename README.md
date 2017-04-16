@@ -29,7 +29,7 @@ public class MyAppPolicyConfiguration : AbstractPolicyConfiguration
 ## Init policy context
 
 ```csharp
-IPolicyContext _policyContext;
+IFluentBootstrap _policies;
 
 ContainerBuilder builder = new ContainerBuilder();
 
